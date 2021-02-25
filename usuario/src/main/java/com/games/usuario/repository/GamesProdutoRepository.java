@@ -8,5 +8,5 @@ import com.games.usuario.model.GamesProdutosModel;
 
 public interface GamesProdutoRepository extends JpaRepository<GamesProdutosModel, Long>
 {
-	public List<GamesProdutosModel> findByDescricaoProdutoContainingIgnoreCase(String descricaoProduto);
+	public List<GamesProdutosModel> findAllByDescricaoProdutoContainingIgnoreCase(String descricaoProduto);
 }

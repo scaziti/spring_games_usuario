@@ -37,7 +37,7 @@ public class GamesProdutoController
 	@GetMapping("/descricao/{descricaoProduto}")
 	public ResponseEntity<List<GamesProdutosModel>> GetByDescricao(@PathVariable String descricaoProduto)
 	{
-		return ResponseEntity.ok(this.repository.findByDescricaoProdutoContainingIgnoreCase(descricaoProduto));
+		return ResponseEntity.ok(this.repository.findAllByDescricaoProdutoContainingIgnoreCase(descricaoProduto));
 	}
 	
 }
