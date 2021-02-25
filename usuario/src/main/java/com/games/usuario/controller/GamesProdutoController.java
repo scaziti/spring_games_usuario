@@ -34,4 +34,10 @@ public class GamesProdutoController
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
+	@GetMapping("/descricao/{descricaoProduto}")
+	public ResponseEntity<List<GamesProdutosModel>> GetByDescricao(@PathVariable String descricaoProduto)
+	{
+		return ResponseEntity.ok(this.repository.findByDescricaoProdutoContainingIgnoreCase(descricaoProduto));
+	}
+	
 }
