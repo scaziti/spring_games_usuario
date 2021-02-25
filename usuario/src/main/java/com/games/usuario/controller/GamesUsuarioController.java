@@ -33,4 +33,10 @@ public class GamesUsuarioController
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
+	
+	@GetMapping("/nome/{nomeUsuario}")
+	public ResponseEntity<List<GamesUsuarioModel>> GetByNome(@PathVariable String nomeUsuario)
+	{
+		return ResponseEntity.ok(this.repository.findAllByNomeUsuarioContainingIgnoreCase(nomeUsuario));
+	}
 }
